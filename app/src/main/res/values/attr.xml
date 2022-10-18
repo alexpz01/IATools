@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="submit_button" format="color" />
+    <attr name="textarea_border" format="color" />
+    <attr name="delete_button" format="color" />
+</resources>

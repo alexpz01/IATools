@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/submitbutton"
+        android:backgroundTint="?attr/submit_button"
+        android:drawableTint="?attr/submit_button"
+        android:text="@string/Submit"
+        android:textColor="?android:attr/textColorPrimaryInverse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <FrameLayout
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/textareaborder"
+        android:padding="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/textarea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:attr/colorBackground"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:padding="0dp"
+            android:textSize="16sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </FrameLayout>
+
+    <SeekBar
+        android:id="@+id/temperatureBar"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/delete_all_button"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <TextView
+        android:id="@+id/temperatureLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-35dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="16dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/maxWords"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/temperatureBar"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <EditText
+        android:id="@+id/maxWords"
+        android:layout_width="41dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/temperatureBar"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.457"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <FrameLayout
+        android:id="@+id/delete_all_button"
+        android:layout_width="53dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/deletebutton"
+        android:paddingLeft="16dp"
+        android:paddingTop="10dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/submit_button"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_trash_solid"
+            android:backgroundTint="#000000"
+            android:backgroundTintMode="src_atop"
+            app:iconTint="#000000"
+            android:clickable="false"/>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
