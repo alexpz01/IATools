@@ -16,5 +16,6 @@
         <item name="textarea_border">@color/textarea_day</item>
         <item name="delete_button">@color/delete_day</item>
         <item name="android:windowActivityTransitions">true</item>
+        <item name="loading_icon">@color/black</item>
     </style>
 </resources>

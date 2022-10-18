@@ -3,4 +3,5 @@
     <attr name="submit_button" format="color" />
     <attr name="textarea_border" format="color" />
     <attr name="delete_button" format="color" />
+    <attr name="loading_icon" format="color" />
 </resources>

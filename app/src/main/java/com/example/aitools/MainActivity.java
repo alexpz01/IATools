@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView temperatureLevel;
     private TextView max_words;
     private FrameLayout deleteAll;
+    private FrameLayout loadingIcon;
 
 
     @Override
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         this.temperatureLevel = findViewById(R.id.temperatureLevel);
         this.max_words = findViewById(R.id.maxWords);
         this.deleteAll = findViewById(R.id.delete_all_button);
+        this.loadingIcon = findViewById(R.id.loadingIcon);
 
         showTextOnClick();
         updateTemperature();
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String totalText = textarea.getText().toString();
+                startLoading();
                 if (totalText.length() > 0) {
                     APIrequest request = new APIrequest(getApplicationContext(), textarea.getText().toString());
                     request.getAiResponse(new APIrequest.OnResponseListener() {
@@ -67,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         // Displays the response progressively to the user
                         @Override
                         public void onResponse(String text) {
+                            endLoading();
                             TextWriter tw = new TextWriter(text, textarea);
                             tw.execute(1);
                         }
@@ -142,5 +146,19 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    // Start the loading icon animation
+    protected void startLoading() {
+        loadingIcon.setVisibility(View.VISIBLE);
+        Animation loadingAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.loading);
+        loadingIcon.startAnimation(loadingAnimation);
+    }
+
+
+    // Stop the loading icon animation
+    protected void endLoading() {
+        loadingIcon.setVisibility(View.GONE);
+        loadingIcon.clearAnimation();
     }
 }
